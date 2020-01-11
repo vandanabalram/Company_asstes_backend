@@ -1,17 +1,39 @@
 module.exports = function(app) {
     const todoList = require('../Controller/Controller');
-     const isAuth=require('../Middleware/isAuth')
+    const desktop = require('../Controller/DesktopController');
+    const laptop = require('../Controller/LaptopController');
+    const miscellaneous = require('../Controller/MiscellaneousController');
+    const isAuth=require('../Middleware/isAuth')
     
    
-     app.route('/Singup')
+     app.route('/Signup')
     .get(todoList.get_a_data)
     .post(todoList.signup);
 
     app.route('/Signin')
-    .post(todoList.userSignin,isAuth);
+    .get(todoList.userSignin);
     
     app.route('/Singup/:SingupId')
     .get(todoList.read_a_task)
     .put(todoList.update_a_task)
     .delete(todoList.delete_a_task);
+
+   
+
+    app.route('/Desktop')
+    .get(desktop.get_a_data)
+    .post(desktop.update_a_task)  
+
+
+
+    app.route('/Laptop')
+    .get(laptop.get_a_data)
+    .post(laptop.update_a_task)  
+
+    app.route('/Miscellaneous')
+    .get(miscellaneous.get_a_data)
+    .post(miscellaneous.update_a_task)  
     };
+
+
+    
