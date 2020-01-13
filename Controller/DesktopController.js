@@ -13,12 +13,12 @@ exports.get_a_data = function(req, res) {
   });
 };
 
-
-
 exports.update_a_task = function(req, res)
 {
+  console.log(req.body)
   var User = new UserData(req.body);
-  User.save({},function(err, data) {
+  User.save({},function(err,data) {
+    console.log("added")
   if (err)
   res.send(err);
   res.json(data);
@@ -26,7 +26,7 @@ exports.update_a_task = function(req, res)
 };
 
 exports.delete_a_task = function(req, res) {
-  UserData.remove({_id: req.params.taskId}, function(err, task) {
+  UserData.remove({_id: req.params.id}, function(err, task) {
   if (err)
   res.send(err);
   res.json({ message: 'Task successfully deleted' });

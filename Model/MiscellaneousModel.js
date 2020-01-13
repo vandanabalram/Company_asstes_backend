@@ -6,17 +6,17 @@ var TaskSchema = new Schema({
 
 Asset_Number:{
     type: String,
-    required:true
+    // required:true
 },
 
 MAC_Address:{
     type: String,
-    required: true
+    // required: true
 },
 
 Comment:{
     type: String,
-    required: true
+    // required: true
 },
 
 });

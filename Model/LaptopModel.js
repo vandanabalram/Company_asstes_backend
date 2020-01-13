@@ -5,28 +5,28 @@ var Schema = mongoose.Schema;
 var TaskSchema = new Schema({
 Employee_Id: {
     type: String,
-    required: true
+    // required: true
 },
 Asset_Number:{
     type: String,
-    required:true
+    // required:true
 },
 Name:{
     type: String,
-    required: true
+    // required: true
 },
 
 MAC_Address:{
     type: String,
-    required: true
+    // required: true
 },
 ChargerAssest_Number:{
     type: String,
-    required: true
+    // required: true
 },
 Comment:{
     type: String,
-    required: true
+    // required: true
 },
 
 

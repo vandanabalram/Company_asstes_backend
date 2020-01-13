@@ -22,17 +22,29 @@ module.exports = function(app) {
 
     app.route('/Desktop')
     .get(desktop.get_a_data)
-    .post(desktop.update_a_task)  
+    .post(desktop.update_a_task) 
+    app.route('/delete/:id')
+    .delete(desktop.delete_a_task )
+    .put(desktop.update_a_task)
 
-
-
+    
     app.route('/Laptop')
     .get(laptop.get_a_data)
     .post(laptop.update_a_task)  
+    app.route('/delete/:id')
+    .delete(laptop.delete_a_task1 )
+    .put(laptop.update_a_task)
+
+    
 
     app.route('/Miscellaneous')
     .get(miscellaneous.get_a_data)
     .post(miscellaneous.update_a_task)  
+    app.route('/delete/:id')
+    .delete(miscellaneous.delete_a_task )
+    .put(miscellaneous.update_a_task)
+
+    
     };
 
 
