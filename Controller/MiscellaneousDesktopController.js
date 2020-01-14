@@ -1,19 +1,18 @@
 const mongoose = require('mongoose');
-const UserData =require('../Model/MiscellaneousModel');
+const UserData =require('../Model/MiscellaneousDesktopModel');
 const bcrypt =require('bcrypt');
 const jwt = require('jsonwebtoken');
 var isAuth=require('../Middleware/isAuth')
     
 
 exports.get_a_data = function(req, res) {
-  UserData.find({}, function(err, task3) {
+  UserData.find({}, function(err, Tasks3) {
   if (err)
     res.send(err);
-    res.json(task3);
+    res.json(Tasks3);
+    console.log(Tasks3)
   });
 };
-
-
 
 exports.update_a_task = function(req, res)
 {
@@ -26,8 +25,9 @@ exports.update_a_task = function(req, res)
   res.json(data);
   });
 };
+
 exports.delete_a_task = function(req, res) {
-  UserData.remove({_id: req.params.id}, function(err, task) {
+  UserData.remove({_id: req.params.id}, function(err, Tasks3) {
   if (err)
   res.send(err);
   res.json({ message: 'Task successfully deleted' });
@@ -36,12 +36,16 @@ exports.delete_a_task = function(req, res) {
 
 exports.read_a_task = function(req, res) 
 {
-  UserData.findById(req.params.id, function(err, task) {
+  UserData.findById(req.params.taskId, function(err, Tasks3) {
   if (err)
   res.send(err);
-  res.json(task);
+  res.json(Tasks3);
   });
   };
+
+
+
+
 
 
 

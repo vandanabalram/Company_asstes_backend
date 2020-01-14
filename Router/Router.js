@@ -2,7 +2,8 @@ module.exports = function(app) {
     const todoList = require('../Controller/Controller');
     const desktop = require('../Controller/DesktopController');
     const laptop = require('../Controller/LaptopController');
-    const miscellaneous = require('../Controller/MiscellaneousController');
+    // const miscellaneous = require('../Controller/MiscellaneousController');
+    const miscellaneousdesktop = require('../Controller/MiscellaneousDesktopController');
     const isAuth=require('../Middleware/isAuth')
     
    
@@ -11,7 +12,7 @@ module.exports = function(app) {
     .post(todoList.signup);
 
     app.route('/Signin')
-    .get(todoList.userSignin);
+    .post(todoList.userSignin);
     
     app.route('/Singup/:SingupId')
     .get(todoList.read_a_task)
@@ -25,27 +26,28 @@ module.exports = function(app) {
     .post(desktop.update_a_task) 
     app.route('/delete/:id')
     .delete(desktop.delete_a_task )
+    app.route('/Desktop/:Desktopid')
     .put(desktop.update_a_task)
 
     
     app.route('/Laptop')
     .get(laptop.get_a_data)
     .post(laptop.update_a_task)  
-    app.route('/delete/:id')
-    .delete(laptop.delete_a_task1 )
+    app.route('/delete1/:id')
+    .delete(laptop.delete_a_task )
+    app.route('/Laptop/:Laptopid')
     .put(laptop.update_a_task)
 
-    
+    app.route('/MiscellaneousDesktop')
+    .get(laptop.get_a_data)
+    .post(laptop.update_a_task)  
+    app.route('/delete1/:id')
+    .delete(laptop.delete_a_task )
+    app.route('/Miscellaneous/:Miscellaneousid')
+    .put(laptop.update_a_task)
 
-    app.route('/Miscellaneous')
-    .get(miscellaneous.get_a_data)
-    .post(miscellaneous.update_a_task)  
-    app.route('/delete/:id')
-    .delete(miscellaneous.delete_a_task )
-    .put(miscellaneous.update_a_task)
 
-    
-    };
+}
 
 
     

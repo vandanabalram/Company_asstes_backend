@@ -7,7 +7,7 @@ Employee_Id: {
     type: String,
     // required: true
 },
-Assest_Number:{
+Asset_Number:{
     type: String,
     // required:true
 },
