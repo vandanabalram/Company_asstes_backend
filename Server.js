@@ -6,6 +6,8 @@ var Tasks = require('./Model/Model');
 var Tasks1 = require('./Model/DesktopModel');
 var Tasks2 = require('./Model/LaptopModel');
 var MisDesktop = require('./Model/MiscellaneousDesktopModel');
+var MisLap = require('./Model/MisLapModel');
+
 
 var cors = require('cors')
 var bodyParser = require('body-parser');

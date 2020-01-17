@@ -8,7 +8,7 @@ Asset_Number: {
     
 },
 
-Device:{
+Desktop:{
     type: String,
     
 },

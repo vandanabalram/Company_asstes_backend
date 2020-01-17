@@ -3,18 +3,12 @@ var Schema = mongoose.Schema;
 
 
 var TaskSchema = new Schema({
-Employee_Id: {
-    type: String,
-    // required: true
-},
+
 Asset_Number:{
     type: String,
     // required:true
 },
-Name:{
-    type: String,
-    // required: true
-},
+
 
 MAC_Address:{
     type: String,
@@ -22,15 +16,21 @@ MAC_Address:{
 },
 ChargerAsset_Number:{
     type: String,
-    // required: true
+    required: true
 },
-Comment:{
-    type: String,
-    // required: true
+Mouse:{
+    type:Boolean,
 },
+Keyboard:{
+    type:Boolean,
+},
+Cables:{
+    type:Boolean,
+}
+
 
 
 
 });
 
-module.exports = mongoose.model('Tasks2', TaskSchema);
+module.exports = mongoose.model('Tasks4', TaskSchema);

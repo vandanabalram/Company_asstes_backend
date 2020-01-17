@@ -2,8 +2,9 @@ module.exports = function(app) {
     const todoList = require('../Controller/Controller');
     const desktop = require('../Controller/DesktopController');
     const laptop = require('../Controller/LaptopController');
-    // const miscellaneous = require('../Controller/MiscellaneousController');
-    const miscellaneousdesktop = require('../Controller/MiscellaneousDesktopController');
+    const misdesk = require('../Controller/MiscellaneousDesktopController');
+    const mislap = require('../Controller/MisLapController');
+
     const isAuth=require('../Middleware/isAuth')
     
    
@@ -39,13 +40,22 @@ module.exports = function(app) {
     .put(laptop.update_a_task)
 
     app.route('/MiscellaneousDesktop')
-    .get(laptop.get_a_data)
-    .post(laptop.update_a_task)  
-    app.route('/delete1/:id')
-    .delete(laptop.delete_a_task )
-    app.route('/Miscellaneous/:Miscellaneousid')
-    .put(laptop.update_a_task)
+    .get(misdesk.get_a_data)
+    .post(misdesk.update_a_task)  
+    app.route('/delete2/:id')
+    .delete(misdesk.delete_a_task )
+    app.route('/MiscellaneousDesktop/:MiscellaneousDesktopid')
+    .put(misdesk.update_a_task)
 
+
+
+    app.route('/MiscellaneousLaptop')
+    .get(mislap.get_a_data)
+    .post(mislap.update_a_task)  
+    app.route('/delete3/:id')
+    .delete(mislap.delete_a_task )
+    app.route('/edit3/:id')
+    .put(mislap.update_a_task1)
 
 }
 

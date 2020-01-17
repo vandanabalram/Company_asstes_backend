@@ -6,11 +6,11 @@ var isAuth=require('../Middleware/isAuth')
     
 
 exports.get_a_data = function(req, res) {
-  UserData.find({}, function(err, Tasks3) {
+  UserData.find({}, function(err, task3) {
   if (err)
     res.send(err);
-    res.json(Tasks3);
-    console.log(Tasks3)
+    res.json(task3);
+    console.log(task3)
   });
 };
 
@@ -27,7 +27,7 @@ exports.update_a_task = function(req, res)
 };
 
 exports.delete_a_task = function(req, res) {
-  UserData.remove({_id: req.params.id}, function(err, Tasks3) {
+  UserData.remove({_id: req.params.id}, function(err, task3) {
   if (err)
   res.send(err);
   res.json({ message: 'Task successfully deleted' });
@@ -36,10 +36,10 @@ exports.delete_a_task = function(req, res) {
 
 exports.read_a_task = function(req, res) 
 {
-  UserData.findById(req.params.taskId, function(err, Tasks3) {
+  UserData.findById(req.params.taskId, function(err, task3) {
   if (err)
   res.send(err);
-  res.json(Tasks3);
+  res.json(task3);
   });
   };
 

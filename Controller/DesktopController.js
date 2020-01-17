@@ -42,6 +42,14 @@ exports.read_a_task = function(req, res)
   });
   };
 
+  // exports.update_a_task = function(req, res) {
+  //   console.log(req.body)
+  //   User.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, data) {
+  //     if (err)
+  //       res.send(err);
+  //     res.json(data);
+  //   });
+  // };
 
 
 
